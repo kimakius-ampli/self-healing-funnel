@@ -57,11 +57,19 @@ This skill requires:
 
 The skill uses these MCP tools:
 - `query_chart` / `get_from_url` (to read existing funnel charts)
-- `query_amplitude_data` (funnel queries)
-- `render_chart` / `save_chart_edits`
+- `query_dataset` (ad-hoc funnel queries; returns a temporary `editId`)
+- `save_chart_edits` (persists an `editId` from `query_dataset` into a permanent `chartId`)
+- `get_events` (to validate that event names exist in the project)
 - `search` (for existing guides, experiments, charts)
 - `create_experiment`
 - `create_notebook`
+- `query_experiment` (to pull results from a completed experiment)
+
+> Note: `query_dataset` is the canonical ad-hoc analytics query tool. Charts you create
+> with it are returned as temporary `editId`s; call `save_chart_edits` to turn each one into
+> a permanent `chartId` before adding it to a notebook. Optionally call
+> `get_chart_definition_params` and `verify_chart_definition` first to validate a chart
+> definition before querying.
 
 ## Workflow
 
@@ -82,9 +90,10 @@ Call `query_chart` with the chart ID (or `get_from_url` with the URL). Extract:
 
 **If the user provided step names + project:**
 
-Validate the events exist by calling `query_amplitude_data` in Mode 1 with the step names
-as `eventSearchTerms`. Confirm they have volume > 0. If any step has zero volume, flag it
-and ask the user for an alternative.
+Validate the events exist by calling `get_events` for the project and confirming each step
+name is present. To confirm a step actually has volume, run a quick `query_dataset` (an
+`eventsSegmentation` query over the last 30 days). If any step is missing or has zero
+volume, flag it and ask the user for an alternative.
 
 **If the user only provided a project (fallback):**
 
@@ -102,7 +111,7 @@ Query the funnel conversion over time to identify declining steps.
 
 **Step 2.1: Create the trend chart**
 
-Call `render_chart` with a funnel definition:
+Call `query_dataset` with a funnel definition (this returns a temporary `editId`):
 ```
 type: "funnels"
 metric: "OVER_TIME"
