@@ -1,3 +1,40 @@
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║                           READ THIS FIRST                              ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+
+> # ⚠️🛑 DISCLAIMER — READ BEFORE USING 🛑⚠️
+>
+> ## 🚨 THIS IS **NOT** AN OFFICIAL AMPLITUDE PRODUCT. 🚨
+>
+> This repository is an **UNOFFICIAL, UNSUPPORTED, COMMUNITY DEMONSTRATION**. It is provided
+> purely as an **example / educational demo** of what a Claude skill *could* do with the
+> Amplitude MCP connector.
+>
+> ### ❌ What this is NOT:
+> - **NOT** an official Amplitude product, feature, or service.
+> - **NOT** built, endorsed, reviewed, or supported by Amplitude, Inc.
+> - **NOT** maintained. There are **no updates, no bug fixes, and no support** of any kind.
+> - **NOT** tested for production use. **DO NOT run this against a production Amplitude project.**
+>
+> ### ⚠️ USE ENTIRELY AT YOUR OWN RISK
+> This skill instructs an AI agent to **read your analytics data and CREATE and MODIFY content**
+> in your Amplitude org (charts, **draft experiments**, notebooks). An AI agent can make mistakes,
+> misinterpret your funnel, or act on the wrong project. **You are solely responsible for
+> reviewing every action it takes.** It runs with whatever access **your** Amplitude MCP
+> credentials/tokens grant — treat those tokens as sensitive and assume anything they can reach
+> could be affected.
+>
+> ### 🧾 NO WARRANTY · NO LIABILITY
+> THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. **AMPLITUDE,
+> INC. AND THE AUTHORS ACCEPT NO RESPONSIBILITY OR LIABILITY WHATSOEVER** FOR ANY DAMAGE, DATA
+> LOSS, CORRUPTED OR DELETED ANALYTICS CONTENT, UNINTENDED EXPERIMENTS, COST, OR ANY OTHER HARM
+> ARISING FROM ITS USE. IF IT BREAKS SOMETHING, **YOU OWN BOTH PIECES.**
+>
+> 👉 By installing or running anything in this repo, you accept all of the above. If that's not
+> acceptable, **do not use it.** See [DISCLAIMER.md](DISCLAIMER.md) for the full text.
+
+---
+
 # 🩹 Self-Healing Funnel
 
 A Claude skill that turns Amplitude into an active product optimization engine. Point it at any funnel and it detects conversion drop-offs, diagnoses root causes, audits what has already been tried, and creates a targeted experiment -- all documented in a single Amplitude notebook.

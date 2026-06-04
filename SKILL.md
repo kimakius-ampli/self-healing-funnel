@@ -14,6 +14,18 @@ description: >
 
 # 🩹 The Self-Healing Funnel
 
+> ## ⚠️🛑 DISCLAIMER — NOT AN OFFICIAL AMPLITUDE PRODUCT 🛑⚠️
+>
+> This skill is an **UNOFFICIAL, UNMAINTAINED, COMMUNITY DEMONSTRATION**. It is **NOT** an
+> official Amplitude product and is **NOT** built, endorsed, or supported by Amplitude, Inc.
+> It is provided **"AS IS", with NO WARRANTY and NO SUPPORT**, for demo/educational use only.
+>
+> **DO NOT run this against a production Amplitude project.** This skill directs an AI agent to
+> **create and modify content** (charts, draft experiments, notebooks) in your Amplitude org
+> using **your** MCP credentials/tokens — review every action it takes. **Amplitude, Inc. and
+> the authors accept no responsibility or liability for any damage, data loss, or unintended
+> changes.** Use entirely at your own risk. Full text: see `DISCLAIMER.md`.
+
 An autonomous detection-diagnosis-action loop for Amplitude funnels. This skill turns
 Amplitude from a passive analytics tool into an active product optimization engine.
 
